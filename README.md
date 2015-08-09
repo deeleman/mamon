@@ -33,6 +33,19 @@ All asynchronous methods implement both a Promise-based interface or a classical
 $ node index callback_ui
 ```
 
+### Customizing the API and REST endpoints
+
+In order to ensure reusability, the `lib/client.js` module does not include any API or URL endoint hardcoded within, but will require such information on either the `request()` or `run()` methods payload. The sample `index.js` consumes the API host and endpoints from a centralized JSON file that you can update anytime, with a syntax like this:
+
+```json
+{
+    "hostApi": "aerial-valor-93012.appspot.com",
+    "path": "/challenge"
+}
+```
+
+Beware when updating such file since the automated tests also consume the same settings file for convenience purposes.
+
 ### Running the tests
 A full test suite has been provided leveraging Mocha as test framework and Chai to handle assertions. Some plugin extends Chai in order to provide a better syntax for Promises-based methods. In order to run the test just type the following:
 
