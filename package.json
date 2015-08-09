@@ -1,0 +1,29 @@
+{
+  "name": "mamon",
+  "version": "1.0.0",
+  "description": "A tiny CommonJS module to retrieve Mamon's favorite meal",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "config": {
+    "blanket": {
+        "pattern": "lib",
+        "data-cover-never": "node_modules"
+    }
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test && ./node_modules/mocha/bin/mocha -r blanket -R html-cov > coverage.html && open coverage.html"
+  },
+  "author": "Pablo Deeleman",
+  "license": "ISC",
+  "devDependencies": {
+    "blanket": "^1.1.7",
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "q": "^1.4.1"
+  }
+}
