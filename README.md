@@ -8,7 +8,7 @@ Eventually I realized that the best approach had to be super simplistic and give
 
 AMD modules were discarded in order to focus on CommonJS as the module architecture of choice, so the whole thing could be easily executed (and tested!) by leveraging the Node.js CLI with no middleman libraries whatsoever. The whole thing is built around the `lib/client.js` module. For your convenience an `index.js` file has been attached containing a sample implementation of such module with support for executing the 2 interfaces it provides (either Promises or Callbacks).
 
-According to the API workflow, the application module API should expose a token data fetch method, a sum/reduce method to digest the parts of the auth data that define the final answer endpoint and a method to ping such API service, wrapping these previous utility methods. In fairness, we are good to go with just the latter, but in my mind this app is all about 3 steps (auth-digest-consume_answer) and exposing those methods publicly helped me out building the whole thing from the ground up following a TDD methodology.
+According to the API workflow, the application module API should expose a token data fetch method and a method to submit the GET request containing the properly formatted URL tokens, wrapping the previous fetch method if possible. In fairness, we are good to go with just the latter, but in my mind this app is all about 3 steps (auth-digest-consume_answer) and exposing those methods publicly helped me out building the whole thing from the ground up following a TDD methodology.
 
 ## Application deployment and execution
 
