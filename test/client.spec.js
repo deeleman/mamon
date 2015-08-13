@@ -31,16 +31,6 @@ describe('Our Module', function() {
             .and.notify(done);
     });
 
-    it('Should provide an utility method to aggregate array values', function() {
-        var mockArray1 = [5, 25, 50, 100];
-        var mockArray2 = [10, 20, 30];
-        var mockArray3 = [11, 33];
-
-        client.sumReduce(mockArray1).should.equal(180);
-        client.sumReduce(mockArray2).should.equal(60);
-        client.sumReduce(mockArray3).should.equal(44);
-    });
-
     it('Should get a populated answer and no error response when executing the entire challenge wrapper method', function(done) {
         client.run(apiSettings).should.eventually
             .equal('But of course, it can only be Meat!!! This was a triumph, Mamon will be pleased!')
