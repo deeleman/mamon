@@ -1,4 +1,5 @@
-var fs = require('fs');
+'use strict';
+
 var client = require('../lib/client');
 var chai = require('chai');
 var should = chai.should();
@@ -35,9 +36,9 @@ describe('Our Module', function() {
         var mockArray2 = [10, 20, 30];
         var mockArray3 = [11, 33];
 
-        client.reduce(mockArray1).should.equal(180);
-        client.reduce(mockArray2).should.equal(60);
-        client.reduce(mockArray3).should.equal(44);
+        client.sumReduce(mockArray1).should.equal(180);
+        client.sumReduce(mockArray2).should.equal(60);
+        client.sumReduce(mockArray3).should.equal(44);
     });
 
     it('Should get a populated answer and no error response when executing the entire challenge wrapper method', function(done) {
