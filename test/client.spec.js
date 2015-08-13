@@ -1,4 +1,5 @@
-var fs = require('fs');
+'use strict';
+
 var client = require('../lib/client');
 var chai = require('chai');
 var should = chai.should();

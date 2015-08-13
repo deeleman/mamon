@@ -1,3 +1,5 @@
+'use strict';
+
 var settings = require('./settings.json');
 var client = require('./lib/client');
 
